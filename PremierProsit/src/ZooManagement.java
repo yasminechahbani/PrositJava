@@ -8,7 +8,7 @@ public class ZooManagement {
 
 //instruction 1
     public static void main(String[] args) {
-         ZooManagement zm = new ZooManagement();
+      /*ZooManagement zm = new ZooManagement();  // we cant remove  el new zoomanagement , unlike c++
         System.out.println(zm.zooName+" comporte "+zm.nbcages+"cages");
 
         //instruction 2  allow the user to type in the value
@@ -21,9 +21,21 @@ public class ZooManagement {
         } while ((zm1.nbcages==0)||(zm1.zooName==null));
         System.out.println("changed values : ");
         System.out.println(zm1.zooName);
-        System.out.println(zm1.nbcages);
+        System.out.println(zm1.nbcages);*/
+ /* Zoo.age=4;
+  Zoo newZoo=new Zoo("zooName",4,"Paris");
+Zoo.showAge();
+newZoo.showAge(); */// see how the object that we created follows the behaviour of the class Zoo , as we changed the static variable age for the class Zoo , so did the object because they point on the same place instead of making a copy .
+
+
+
+// instruct 10
+
+
+
 
     }
+
 
 
 }
