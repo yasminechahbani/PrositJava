@@ -1,14 +1,14 @@
-import testPackage.MotherTestClass;  // we cant do this if the class to be inherited is not public!! since both these files are not in the same package , we need the mother class to be public in order for all other classes inside and outside the package to inherit it
+//mport testPackage.MotherTestClass;  // we cant do this if the class to be inherited is not public!! since both these files are not in the same package , we need the mother class to be public in order for all other classes inside and outside the package to inherit it
 
 
 import java.util.Scanner;
 
-public class Animal extends MotherTestClass
+public class Animal
 {
-    private String  family;
+    private final String  family;
     private String name;
     private int age;
-    private boolean ismammal;
+    private final boolean ismammal;
 
     public String getName()
     {
