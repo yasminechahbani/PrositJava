@@ -8,12 +8,13 @@ public class ZooManagement {
 
 //instruction 1
     public static void main(String[] args) {
-      /*ZooManagement zm = new ZooManagement();  // we cant remove  el new zoomanagement , unlike c++
+
+/*ZooManagement zm = new ZooManagement();  // we cant remove  el new zoomanagement , unlike c++
         System.out.println(zm.zooName+" comporte "+zm.nbcages+"cages");
 
         //instruction 2  allow the user to type in the value
         System.out.println("type in the values you want to change ");
-        Scanner scanfvariable = new Scanner(System.in);  
+        Scanner scanfvariable = new Scanner(System.in);
         ZooManagement zm1 = new ZooManagement();
         do {
             zm1.nbcages = scanfvariable.nextInt();   //to read whatever integer i will be typing in
@@ -30,6 +31,13 @@ newZoo.showAge(); */// see how the object that we created follows the behaviour 
 
 
 // instruct 10
+
+
+        Zoo newZoo=new Zoo("belveder",25,"Tunis");
+        Animal newAnimal=new Animal ("feline","",-8,true);
+        newZoo.addAnimal(newAnimal);
+        newZoo.showArray();
+
 
 
 

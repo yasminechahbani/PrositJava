@@ -2,16 +2,17 @@
 
 public class Zoo
 {
-Animal [] animals ;
-String name;
-String city;
- final int nbcages = 25;
- int nbAnimals = 0;
+
+    private Animal [] animals ;
+    private String name;
+    private String city;
+    private final int nbcages = 25;  //remember final is for when its unchanged
+    private int nbAnimals = 0;
  //final int finalnumber;
 
 
     public Zoo(String name, int nbcages, String city/*,int finalnumber*/) {
-        animals=new Animal[0];
+        animals=new Animal[nbcages];
         this.name = name;
         this.city = city;
 //this.finalnumber=finalnumber;
@@ -38,7 +39,7 @@ String city;
     ///instruct 10:
 
     public boolean addAnimal(Animal animal) {
-        if (nbAnimals < nbcages) {
+        if (!this.isZooFull()) {
             animals[nbAnimals] = animal;
             nbAnimals++;
             return true;
@@ -48,7 +49,7 @@ String city;
     public int searchAnimal(Animal animal)
     {
         for (int i = 0; i < nbAnimals; i++) {
-            if (animals[i].name==animal.name) {
+            if (animals[i].getName()==animal.getName()) {
                 return i;
             }
         }
@@ -61,5 +62,23 @@ String city;
             animals[i].afficher();
         }
     }
+    public boolean isZooFull()
+    {int j=0;
+        for (int i=0;i<nbAnimals;i++)
+        {
+
+            if (animals[i]!=null) {
+                j++;
+            }
+        }
+            if (j<nbcages) {
+                System.out.println("zoo aint full");
+                return false;
+            }
+
+        System.out.println("zoo full");
+        return true;
+    }
+
 }
 
