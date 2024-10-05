@@ -1,3 +1,8 @@
+package tn.esprit.gestionzoo.mains;
+
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Zoo;
+
 public class Main_seance2 {
     public static void main(String[] args) {
 
