@@ -45,7 +45,7 @@ public class Zoo
             return true;
         }
         return false;
-    }
+    }   
     public int searchAnimal(Animal animal)
     {
         for (int i = 0; i < nbAnimals; i++) {
