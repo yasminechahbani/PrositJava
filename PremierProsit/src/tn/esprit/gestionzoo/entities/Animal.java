@@ -41,6 +41,12 @@ public class Animal
         setAge(age);
         this.ismammal = ismammal;
     }
+    public Animal() {
+        this.family = "Unknown";  // Valeur par défaut
+        this.name = "Unknown";    // Valeur par défaut
+        this.age = 0;             // Valeur par défaut
+        this.ismammal = false;    // Valeur par défaut
+    }
     public void afficher()
     {
         System.out.println(family + " " + name + " " + age + " " + ismammal);

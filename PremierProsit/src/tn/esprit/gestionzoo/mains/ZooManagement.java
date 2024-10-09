@@ -1,5 +1,7 @@
 package tn.esprit.gestionzoo.mains;
-
+import tn.esprit.gestionzoo.entities.Aquatic.penguin;
+import tn.esprit.gestionzoo.entities.Aquatic.aquatic;
+import tn.esprit.gestionzoo.entities.Aquatic.Dophin;
 import tn.esprit.gestionzoo.entities.Animal;
 import tn.esprit.gestionzoo.entities.Zoo;
 
@@ -37,14 +39,23 @@ newZoo.showAge(); */// see how the object that we created follows the behaviour 
 // instruct 10
 
 
-        Zoo newZoo=new Zoo("belveder",25,"Tunis");
+   /*     Zoo newZoo=new Zoo("belveder",25,"Tunis");
         Animal newAnimal=new Animal ("feline","",-8,true);
         newZoo.addAnimal(newAnimal);
-        newZoo.showArray();
+        newZoo.showArray();*/
+//prosit 5
+        aquatic defaultAquatic = new aquatic();
+        Dophin defaultDphin = new Dophin();
+        penguin defaultPenguin = new penguin();
+        defaultAquatic.afficher();
 
-
-
-
+         aquatic Fish=new aquatic("goldfish","gold",3,false,"Ocean");
+        Dophin  dolphin = new Dophin("dauphin","dauph",11,false,"sea",16);
+        penguin penguin = new penguin("penguin","white",-3,false,"Antarctica",59);
+        Fish.afficher();
+        Fish.swim();
+        dolphin.swim();
+        penguin.swim();  //polymorphism
 
     }
 
