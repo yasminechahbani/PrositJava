@@ -10,9 +10,15 @@ public class penguin extends aquatic{
         super(family, name, age, ismammal,h);
         this.SwimDepth = s;
     }
+    public float maxPengSwimDepth(){
+        return 200.0f;
+    }
+
+
 public String toString(){
         return super.toString() + " SwimDepth: " + SwimDepth;
 
 }
+
 
 }

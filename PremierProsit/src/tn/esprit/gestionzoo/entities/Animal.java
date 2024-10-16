@@ -5,15 +5,24 @@ import java.util.Scanner;
 
 public class Animal
 {
-    private final String  family;
-    private String name;
-    private int age;
+    protected   String  family;
+    protected String name;
+    protected int age;
     private final boolean ismammal;
 
     public String getName()
     {
         return name;
     }
+
+    public String getFamily() {
+        return family;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
     public void setAge(int age){
         Scanner scanner = new Scanner(System.in);
         while (age <= 0) {
@@ -52,6 +61,7 @@ public class Animal
         System.out.println(family + " " + name + " " + age + " " + ismammal);
 
     }
+
     /*public void AddAnimal(String family, String name, int age, boolean ismammal)
     {
         System.out.println("family ?");

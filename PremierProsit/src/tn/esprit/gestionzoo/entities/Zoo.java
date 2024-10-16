@@ -1,5 +1,9 @@
 package tn.esprit.gestionzoo.entities;
 
+import tn.esprit.gestionzoo.entities.Aquatic.Dophin;
+import tn.esprit.gestionzoo.entities.Aquatic.aquatic;
+import tn.esprit.gestionzoo.entities.Aquatic.penguin;
+
 public class Zoo
 {
 
@@ -8,13 +12,16 @@ public class Zoo
     private String city;
     private final int nbcages = 25;  //remember final is for when its unchanged
     private int nbAnimals = 0;
+    private aquatic[] aquaticAniamls;
+    private int nbAquatic=0;
  //final int finalnumber;
 
 
-    public Zoo(String name, int nbcages, String city/*,int finalnumber*/) {
+    public Zoo(String name, int nbcages, String city) {
         animals=new Animal[nbcages];
         this.name = name;
         this.city = city;
+        aquaticAniamls = new aquatic[20];
 //this.finalnumber=finalnumber;
 
     }
@@ -79,8 +86,35 @@ public class Zoo
         System.out.println("zoo full");
         return true;
     }
+    public void addAquaticAnimal(aquatic aquaObj) {
+        if (nbAquatic < 10) {
+            aquaticAniamls[nbAquatic] = aquaObj;
+            nbAquatic++;
+        } else {
+            System.out.println("Aquatic animals full");
+        }
+    }
 
+    public void displayNumberofAquaticsByType(){
+        int aquaticCount = 0, dolphinCount = 0, penguinCount = 0;
 
+        for (aquatic animal : aquaticAniamls) {
+            if (animal instanceof Dophin) {
+                dolphinCount++;
+            } else if (animal instanceof penguin) {
+                penguinCount++;
+            } else if (animal instanceof aquatic) {
+                aquaticCount++;
+            }
+        }
+
+        System.out.println("In this zoo, there are:");
+        System.out.println(dolphinCount + " dolphins");
+        System.out.println(penguinCount + " penguins");
+        System.out.println(aquaticCount + " other aquatic animals");
+    }
 
 }
+
+
 

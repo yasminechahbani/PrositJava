@@ -49,13 +49,19 @@ newZoo.showAge(); */// see how the object that we created follows the behaviour 
         penguin defaultPenguin = new penguin();
         defaultAquatic.afficher();
 
-         aquatic Fish=new aquatic("goldfish","gold",3,false,"Ocean");
+        aquatic Fish=new aquatic("goldfish","gold",3,false,"Ocean");
         Dophin  dolphin = new Dophin("dauphin","dauph",11,false,"sea",16);
-        penguin penguin = new penguin("penguin","white",-3,false,"Antarctica",59);
         Fish.afficher();
         Fish.swim();
         dolphin.swim();
+        penguin penguin = new penguin("penguin","white",-3,false,"Antarctica",59);
         penguin.swim();  //polymorphism
+//prosit 6
+        Zoo zooObj=new Zoo("esm",1,"tunis");
+        zooObj.addAquaticAnimal(Fish);
+        zooObj.addAquaticAnimal(dolphin);
+        zooObj.addAquaticAnimal(penguin);
+        zooObj.displayNumberofAquaticsByType();
 
     }
 
