@@ -63,6 +63,11 @@ newZoo.showAge(); */// see how the object that we created follows the behaviour 
         zooObj.addAquaticAnimal(penguin);
         zooObj.displayNumberofAquaticsByType();
 
+        aquatic dolphin1 = new aquatic("Dolphin","aa", 5,true, "Cetacea");
+        aquatic dolphin2 = new aquatic("Dolphin","aa", 5,true, "Cetacea");
+
+        System.out.println("dolphin1 equals dolphin2? " + dolphin1.equals(dolphin2));
+
     }
 
 
