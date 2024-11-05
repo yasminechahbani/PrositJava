@@ -1,8 +1,11 @@
 package tn.esprit.gestionzoo.entities.Aquatic;
 
 import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Carnivore;
+import tn.esprit.gestionzoo.entities.food;
 
-public class aquatic extends Animal {
+
+public class aquatic extends Animal implements Carnivore<food> {
 
 private String Habitat;
     public aquatic() {
@@ -33,5 +36,7 @@ public String toString()
         }
         return false;
     }
+public void eatMeat(food meat){
 
+}
 }
