@@ -1,5 +1,7 @@
 package tn.esprit.gestionzoo.entities.Aquatic;
 
+import tn.esprit.gestionzoo.entities.food;
+
 public class penguin extends aquatic{
     private final float SwimDepth;
     public penguin() {
@@ -19,6 +21,13 @@ public String toString(){
         return super.toString() + " SwimDepth: " + SwimDepth;
 
 }
+    public void eatMeat(food meat) {
 
+        if (meat == food.MEAT || meat == food.BOTH) {
+            System.out.println("Eating meat.");
+        } else {
+            System.out.println("Cannot eat meat.");
+        }
+    }
 
 }

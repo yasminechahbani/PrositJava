@@ -37,6 +37,10 @@ public String toString()
         return false;
     }
 public void eatMeat(food meat){
-
+    if (meat == food.MEAT || meat == food.BOTH) {
+        System.out.println("Eating meat.");
+    } else {
+        System.out.println("Cannot eat meat.");
+    }
 }
 }

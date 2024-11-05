@@ -4,6 +4,9 @@ import tn.esprit.gestionzoo.entities.Aquatic.aquatic;
 import tn.esprit.gestionzoo.entities.Aquatic.Dophin;
 import tn.esprit.gestionzoo.entities.Animal;
 import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.food;
+import tn.esprit.gestionzoo.entities.terrestrial;
+
 
 public class ZooManagement {
 
@@ -45,7 +48,7 @@ newZoo.showAge(); */// see how the object that we created follows the behaviour 
         newZoo.showArray();*/
 //prosit 5
         aquatic defaultAquatic = new aquatic();
-        Dophin defaultDphin = new Dophin();
+        Dophin defaultDophin = new Dophin();
         penguin defaultPenguin = new penguin();
         defaultAquatic.afficher();
 
@@ -67,8 +70,15 @@ newZoo.showAge(); */// see how the object that we created follows the behaviour 
         aquatic dolphin2 = new aquatic("Dolphin","aa", 5,true, "Cetacea");
 
         System.out.println("dolphin1 equals dolphin2? " + dolphin1.equals(dolphin2));
-
+        // Test the eating behavior
+        defaultAquatic.eatMeat(food.MEAT);
+        defaultPenguin.eatMeat(food.MEAT);
+        terrestrial defaultTerrestrial = new terrestrial("mammal","cow",8,true,3);
+        defaultTerrestrial.eatPlant(food.PLANT);
+        defaultTerrestrial.eatMeat(food.MEAT);
+        defaultTerrestrial.eatPlantsAndMeat(food.BOTH);
     }
+
 
 
 
