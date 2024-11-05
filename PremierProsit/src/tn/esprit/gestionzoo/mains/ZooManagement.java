@@ -1,11 +1,8 @@
 package tn.esprit.gestionzoo.mains;
+import tn.esprit.gestionzoo.entities.*;
 import tn.esprit.gestionzoo.entities.Aquatic.penguin;
 import tn.esprit.gestionzoo.entities.Aquatic.aquatic;
 import tn.esprit.gestionzoo.entities.Aquatic.Dophin;
-import tn.esprit.gestionzoo.entities.Animal;
-import tn.esprit.gestionzoo.entities.Zoo;
-import tn.esprit.gestionzoo.entities.food;
-import tn.esprit.gestionzoo.entities.terrestrial;
 
 
 public class ZooManagement {
@@ -60,17 +57,37 @@ newZoo.showAge(); */// see how the object that we created follows the behaviour 
         penguin penguin = new penguin("penguin","white",-3,false,"Antarctica",59);
         penguin.swim();  //polymorphism
 //prosit 6
-        Zoo zooObj=new Zoo("esm",1,"tunis");
+        Zoo zooObj=new Zoo("esm","tunis");
         zooObj.addAquaticAnimal(Fish);
         zooObj.addAquaticAnimal(dolphin);
         zooObj.addAquaticAnimal(penguin);
         zooObj.displayNumberofAquaticsByType();
 
-        aquatic dolphin1 = new aquatic("Dolphin","aa", 5,true, "Cetacea");
-        aquatic dolphin2 = new aquatic("Dolphin","aa", 5,true, "Cetacea");
+        aquatic dolphin1 = new aquatic("Dolphin","a", 5,true, "Cetacea");
+        aquatic dolphin2 = new aquatic("Dolphin","aa", -5,true, "Cetacea");
 
         System.out.println("dolphin1 equals dolphin2? " + dolphin1.equals(dolphin2));
-        // Test the eating behavior
+        //prosit 7
+        try{
+            zooObj.addAnimal(dolphin1);
+            zooObj.addAnimal(new Animal("Lion","lion",10,true));
+            zooObj.addAnimal(dolphin);
+            zooObj.addAnimal(dolphin2);
+
+
+
+        }
+        catch (ZooFullException e){
+            System.out.println(e.getMessage());
+        }
+        catch (InvalidAgeException e){
+            System.out.println(e.getMessage());
+        }
+
+
+
+
+        // Prosit 8
         defaultAquatic.eatMeat(food.MEAT);
         defaultPenguin.eatMeat(food.MEAT);
         terrestrial defaultTerrestrial = new terrestrial("mammal","cow",8,true,3);
@@ -78,6 +95,7 @@ newZoo.showAge(); */// see how the object that we created follows the behaviour 
         defaultTerrestrial.eatMeat(food.MEAT);
         defaultTerrestrial.eatPlantsAndMeat(food.BOTH);
     }
+
 
 
 

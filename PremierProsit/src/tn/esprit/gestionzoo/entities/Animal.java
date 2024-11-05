@@ -25,11 +25,11 @@ public class Animal
 
     public void setAge(int age){
         Scanner scanner = new Scanner(System.in);
-        while (age <= 0) {
+        /*while (age <= 0) {
             System.out.println("Age must be positive.");
             System.out.print("Please enter a valid age: ");
             age = scanner.nextInt();
-        }
+        }*/
 
         this.age = age;
     }
@@ -83,4 +83,6 @@ public class Animal
 
 
     }*/
+
+
 }

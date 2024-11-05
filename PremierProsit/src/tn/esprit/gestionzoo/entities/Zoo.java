@@ -10,14 +10,14 @@ public class Zoo
     private Animal [] animals ;
     private String name;
     private String city;
-    private final int nbcages = 25;  //remember final is for when its unchanged
+    private final int nbcages = 3;  //remember final is for when its unchanged
     private int nbAnimals = 0;
     private aquatic[] aquaticAniamls;
     private int nbAquatic=0;
  //final int finalnumber;
 
 
-    public Zoo(String name, int nbcages, String city) {
+    public Zoo(String name, String city) {
         animals=new Animal[nbcages];
         this.name = name;
         this.city = city;
@@ -45,14 +45,27 @@ public class Zoo
     //prosit 3
     ///instruct 10:
 
-    public boolean addAnimal(Animal animal) {
+   /* public boolean addAnimal(Animal animal) {
         if (!this.isZooFull()) {
             animals[nbAnimals] = animal;
             nbAnimals++;
             return true;
         }
         return false;
-    }   
+    }*/
+    public void addAnimal(Animal animal) throws ZooFullException {
+        if (nbAnimals>=nbcages)
+        {
+            throw new ZooFullException();
+        }
+        if(animal.getAge()<0)
+        {
+            throw new InvalidAgeException("must have a Positive age "+animal.getName()+"was not added to zoo");
+        }
+        animals[nbAnimals] = animal;
+        System.out.println( animal.getName()+" "+"added to zoo:");
+        nbAnimals++;
+        }
     public int searchAnimal(Animal animal)
     {
         for (int i = 0; i < nbAnimals; i++) {
