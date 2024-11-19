@@ -5,19 +5,23 @@ public class Main {
 
 
         List<Employe> newList = new ArrayList<Employe>();
-        Employe e1 = new Employe(11, "yasmine", "chahbani", 20, "IT");
-        Employe e4 = new Employe(2, "yasmine", "chahbani", 20, "IT");
-
-        Employe e2 = new Employe(10, "ahmed", "benMohammed", 20, "IT");
-
-        newList.add(e1);
-        newList.add(e2);
-        newList.add(e4);
-        System.out.println(newList);
-        Collections.sort(newList);
-        System.out.println(newList);
-        Collections.sort(newList, new EmployeComparator());
-        System.out.println(newList);
+       SocieteArrayList S= new SocieteArrayList();
+        S.ajouterEmploye(new Employe(1, "John", "Doe", 5, "IT"));
+        S.ajouterEmploye(new Employe(395, "John", "Adams", 4, "Finance"));
+        S.ajouterEmploye(new Employe(25, "Jane", "Smith", 3, "HR"));
+        S.ajouterEmploye(new Employe(42, "Alice", "Johnson", 2, "IT"));
+        System.out.println("non sorted list :\n");
+        S.displayEmploye();
+        System.out.println("sorted list with id:\n");
+        S.trierEmployeParId();
+        S.displayEmploye();
+        //System.out.println(newList);
+        System.out.println("sorted list with comparator  :\n");
+        S.trierEmployeParNomDépartementEtGrade();
+        //Collections.sort(newList, new EmployeComparator());
+        S.displayEmploye();
+       /* Set<Employe> newHashSet = new HashSet<>();
+        Set<Employe> newTreeSet = new TreeSet<>();*/
 
     }}
 

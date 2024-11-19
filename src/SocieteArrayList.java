@@ -1,10 +1,6 @@
 import java.time.temporal.Temporal;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Iterator;
-
-public class SocieteArrayList implements Gestion<Employe> {
+import java.util.*;
+public class  SocieteArrayList implements Gestion<Employe> {
     ArrayList<Employe>employeeList = new ArrayList<Employe>();
     public void ajouterEmploye(Employe e) {
 Iterator<Employe> it=employeeList.iterator();
@@ -32,7 +28,7 @@ return false;
         Iterator<Employe> it = employeeList.iterator();
         while (it.hasNext()) {  //tant que tableau mezel ma kmelch
             Employe emp = it.next();
-            if (emp.getNom().equals(e.getNom())) {
+            if (emp.getId()==(e.getId())) {
                 return true;
             }
         }
@@ -61,9 +57,24 @@ return false;
         Collections.sort(employeeList);
 
     }
+    public void sort(Comparator<Employe> c) {
+        // Simple Bubble Sort using the comparator
+        for (int i = 0; i < employeeList.size() - 1; i++) {
+            for (int j = i + 1; j < employeeList.size(); j++) {
+                if (c.compare(employeeList.get(i), employeeList.get(j)) > 0) {
+                    // Swap the elements if they are in the wrong order
+                    Employe temp = employeeList.get(i);
+                    employeeList.set(i, employeeList.get(j));
+                    employeeList.set(j, temp);
+                }
+            }
+        }
+    }
 
     public void trierEmployeParNomDépartementEtGrade() {
-
+     EmployeComparator EC = new EmployeComparator();
+     sort(EC);
     }
+
 }
 
